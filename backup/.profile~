@@ -1,0 +1,113 @@
+PATH="$PATH:/usr/local/mysql/bin"
+PATH="$PATH:/Users/vadimr/tools/my"
+PATH="$PATH:/Users/vadimr/tools/play-1.2.3"
+# PATH="$PATH:/Users/vadimr/tools/scala-2.9.0.1/bin"
+export PATH=$HOME/local/node/bin:$PATH
+
+export DISPLAY=:0.0
+# export EDITOR="mate -w"
+# export VISUAL="mate -w"
+export EDITOR="mvim -f"
+export VISUAL="mvim -f"
+
+# \a	The ASCII bell character (you can also type \007)
+# \d	Date in "Wed Sep 06" format
+# \e	ASCII escape character (you can also type \033)
+# \h	First part of hostname (such as "mybox")
+# \H	Full hostname (such as "mybox.mydomain.com")
+# \l	The name of the shell's terminal device (such as "ttyp4")
+# \j	The number of processes you've suspended in this shell by hitting ^Z
+# \n	Newline
+# \r	Carriage return
+# \s	The name of the shell executable (such as "bash")
+# \t	Time in 24-hour format (such as "23:01:01")
+# \T	Time in 12-hour format (such as "11:01:01")
+# \@	Time in 12-hour format with am/pm
+# \u	Your username
+# \v	Version of bash (such as 2.04)
+# \V	Bash version, including patchlevel
+# \w	Current working directory (such as "/home/drobbins")
+# \W	The "basename" of the current working directory (such as "drobbins")
+# \!	Current command's position in the history buffer
+# \#	Command number (this will count up at each prompt, as long as you type something)
+# \$	If you are not root, inserts a "$"; if you are root, you get a "#"
+# \xxx	Inserts an ASCII character based on three-digit number xxx (replace unused digits with zeros, such as "\007")
+# \\	A backslash
+# \[	This sequence should appear before a sequence of characters that don't move the cursor (like color escape sequences). This allows bash to calculate word wrapping correctly.
+# \]	This sequence should appear after a sequence of non-printing characters.
+
+_BLACK="\[\033[0;30m\]"
+_RED="\[\033[0;31m\]"
+_GREEN="\[\033[0;32m\]"
+_YELLOW="\[\033[0;33m\]"
+_BLUE="\[\033[0;34m\]"
+_MOTTON_BLUE="\[\033[0;36m\]"
+_DARK_GRAY="\[\033[1;30m\]"
+
+function parse_git_branch {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
+export PS1="$_MOTTON_BLUE\u@\H $_DARK_GRAY\W $_BLUE\$(parse_git_branch)$_MOTTON_BLUE\$$_BLACK "
+# export PS1="\e[0;36m\h:\W$\e[0;30m " # black
+# export PS1="\e[0;36m\h:\W$\e[0;37m " # white
+
+export LANG="en_US.UTF-8"
+
+alias vim="mvim"
+alias vi="vim"
+alias tvim="/usr/sbin/vim"
+
+# alias ls='ls -G'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias gr='grep -rn'
+alias greps='ps -ef | grep -i'
+
+alias ll='ls -l'
+alias la='ls -A'
+alias l='ls -CF'
+alias l1="ls -1"
+alias la1="ls -a1"
+
+alias a="ack --ignore-dir=assets --ignore-dir=log --ignore-dir=packages --ignore-dir=vendor -i"
+
+alias g="git status"
+alias gc="git commit"
+alias gpr="git pull --rebase"
+alias gsgpr="git stash; git pull --rebase; git stash pop;"
+alias gg="git log --all --grep"
+alias ga="git log --all --author"
+alias gbc="git branch -a --contains"
+
+alias rdbm="rake db:migrate"
+alias migrate="rake db:migrate"
+
+alias notes="cd ~/x-files/notes"
+alias acs="vim ~/x-files/notes/acs.xml"
+
+alias ts='thin start'
+alias ms='mongrel_rails start'
+alias ss='script/server'
+alias sc='script/console'
+alias taildev="tail -n 500 -f log/development.log"
+
+alias start_mysql="/Library/StartupItems/MySQLCOM/MySQLCOM start"
+alias stop_mysql="/Library/StartupItems/MySQLCOM/MySQLCOM stop"
+alias restart_mysql="/Library/StartupItems/MySQLCOM/MySQLCOM restart"
+
+alias start_mongo="mongod --fork --logpath /Users/vadimr/mongodb.log --logappend"
+
+alias railsdoc='open -a Safari ~/x-files/dev/docs/rails/rdoc/index.html'
+alias railsguides='open -a Safari ~/projects/open/rails/railties/guides/output/index.html'
+alias jqdoc='open -a Safari ~/x-files/dev/docs/jquery/jqapi-latest/index.html'
+
+alias mr="mysql -uroot"
+alias myr="mysql -uroot -D newdazzle_development -e "
+
+# alias python=python3.2
+
+[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+
+. .jira

@@ -1,0 +1,10 @@
+--type-set=coffee=.coffee
+--type-add=ruby=.haml
+
+--smart-case
+--follow
+
+--ignore-dir=assets
+--ignore-dir=log
+--ignore-dir=packages
+--ignore-dir=vendor

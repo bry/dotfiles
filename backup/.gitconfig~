@@ -1,0 +1,15 @@
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+[alias]
+	co = checkout
+	st = stash
+[user]
+	name = Vadim Rachko
+	email = vadim@vadimr.com
+[core]
+	quotepath = false
+[push]
+	default = matching

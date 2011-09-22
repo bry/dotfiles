@@ -1,0 +1,10 @@
+export COMP_WORDBREAKS=${COMP_WORDBREAKS/\:/}
+
+JIRA_PEOPLE=(arudenko belall belbugs dilyashevich platysheva pnikitin shanchar skviatkovsky vkulikou vrachko vzarakovsky yvelikanau all)
+
+_jiracomplete() {
+  COMPREPLY=($(compgen -W "${JIRA_PEOPLE[*]}" -- ${COMP_WORDS[COMP_CWORD]}))
+  return 0
+}
+
+complete -o default -o nospace -F _jiracomplete jira
