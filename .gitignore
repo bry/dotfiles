@@ -1,2 +1,2 @@
-tmp/backup/*
-tmp/swap/*
+.vim/tmp/backup/*
+.vim/tmp/swap/*
