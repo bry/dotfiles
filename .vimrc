@@ -108,8 +108,6 @@ vnoremap <tab> %
 " Jumps by 5 lines
 map <C-j> 5j
 map <C-k> 5k
-map <C-j> 5j
-map <C-k> 5k
 
 " Custom commands
 command! Rb setf ruby
