@@ -59,7 +59,7 @@ set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
 set wildignore+=vendor/**,public/assets/**,public/packages/**,log/*
 
 " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
-au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
+au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
 " json is javascript
 au BufNewFile,BufRead *.json set ft=javascript
 " make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
@@ -103,7 +103,6 @@ nnoremap <CR> :noh<cr>
 " Match brackets by tab
 nnoremap <tab> %
 vnoremap <tab> %
-
 
 " Jumps by 5 lines
 map <C-j> 5j
