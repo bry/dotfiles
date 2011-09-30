@@ -66,6 +66,8 @@ au BufNewFile,BufRead *.json set ft=javascript
 au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
 " html.erb is eruby
 au BufNewFile,BufRead *.html.erb set filetype=html.eruby
+" .opener file is Ruby
+au BufNewFile,BufRead .opener set filetype=ruby
 " 78 width for text files
 au FileType text setlocal textwidth=78
 
@@ -110,6 +112,8 @@ map <C-k> 5k
 
 " Custom commands
 command! Rb setf ruby
+command! Py setf python
+command! Js setf javascript
 command! Rc e $MYVIMRC
 command! Profile e ~/.profile
 command! Ctags !ctags -R *
@@ -155,3 +159,11 @@ function! InsertTabWrapper()
 endfunction
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <s-tab> <c-n>
+
+" Command for opening last file from indicated directory
+function! EditLastFileFromDir(dir)
+  let last_file_name = system("find " . a:dir . " | tail -1")
+  exe 'e ' . last_file_name
+endfunction
+
+command! -nargs=1 -complete=dir Elast call EditLastFileFromDir(<f-args>)
