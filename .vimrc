@@ -39,6 +39,9 @@ set showcmd
 set ruler
 set number
 
+" visualvbell instead of beeping
+set vb
+
 syntax on
 
 " Undo
@@ -85,13 +88,16 @@ if has("gui_running")
   set guifont=Monaco:h12
   " line padding
   set lsp=1
-  " visualvbell instead of beeping
-  set vb
 
   " highlighting of cursor line
   set cursorline
 
   colorscheme molokai
+endif
+
+if has('gui_macvim')
+	nmap <SwipeLeft> :bN<CR>
+	nmap <SwipeRight> :bn<CR>
 endif
 
 set langmap=йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ъ],фa,ыs,вd,аf,пg,рh,оj,лk,дl,ж\\;,э',яz,чx,сc,мv,иb,тn,ьm,б\\,,ю.,ё`,ЙQ,ЦW,УE,КR,ЕT,НY,ГU,ШI,ЩO,ЗP,Х{,Ъ},ФA,ЫS,ВD,АF,ПG,РH,ОJ,ЛK,ДL,Ж:,Э\\",ЯZ,ЧX,СC,МV,ИB,ТN,ЬM,Б<,Ю>,Ё~
@@ -145,7 +151,25 @@ fun! s:smallWindow()
   endif
 endf
 
-command! Small :call s:smallWindow()
+command! Small call s:smallWindow()
+
+fun! s:smallTopWindow()
+  let bounds = system("osascript -e 'tell application \"Finder\" to get bounds of window of desktop'")
+  let screenWidth = split(bounds, ', ')[2]
+  let centerX = screenWidth / 2
+
+  call s:smallWindow()
+  exe 'winpos ' . centerX . ' 0'
+endf
+
+command! SmallTop call s:smallTopWindow()
+
+fun! s:smallRuby()
+  call s:smallTopWindow()
+  set filetype=ruby
+endf
+
+command! SmallRuby call s:smallRuby()
 
 " Remap the tab key to do autocompletion or indentation depending on the
 " context (from http://www.vim.org/tips/tip.php?tip_id=102)
