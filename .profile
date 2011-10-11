@@ -74,6 +74,7 @@ alias gg="git log --all --grep"
 alias ga="git log --all --author"
 alias gbc="git branch -a --contains"
 
+alias r='rails'
 alias ts='thin start'
 alias ss='script/server'
 alias sc='script/console'
@@ -86,3 +87,8 @@ alias jqdoc='open -a Safari ~/x-files/dev/docs/jquery/jqapi-latest/index.html'
 alias mr="mysql -uroot"
 
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+
+# Setting PATH for Python 2.7
+# The orginal version is saved in .profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+export PATH
