@@ -129,6 +129,14 @@ command! RemoveTrailingSpaces %s/\s\+$//e
 let g:CommandTAlwaysShowDotFiles=1
 let g:CommandTMatchWindowAtTop=1
 
+map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
+map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
+map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
+map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
+map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
+map <leader>gs :CommandTFlush<cr>\|:CommandT public/stylesheets<cr>
+map <leader>gj :CommandTFlush<cr>\|:CommandT public/javascripts<cr>
+
 " minibuf
 let g:miniBufExplSplitBelow=0
 
@@ -191,3 +199,9 @@ function! EditLastFileFromDir(dir)
 endfunction
 
 command! -nargs=1 -complete=dir Elast call EditLastFileFromDir(<f-args>)
+
+" Next mapping is adopted from destroyallsoftware.com screencasts
+" expand path of directory of current file typing %% in command mode
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+" map ,e to open files in the same directory as current file
+map <leader>e :edit %%
