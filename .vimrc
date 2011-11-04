@@ -192,12 +192,18 @@ inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <s-tab> <c-n>
 
 " Command for opening last file from indicated directory
-function! EditLastFileFromDir(dir)
-  let last_file_name = system("find " . a:dir . " | tail -1")
-  exe 'e ' . last_file_name
+function! EditLastFileFromDir(dir, ...)
+  let all_files = glob(a:dir . "/*")
+  let str_index = get(a:000, 0)
+  let index = -1 - str2nr(str_index)
+
+  if len(all_files) > 0
+    let last_file_name = split(all_files)[index]
+    exe 'e ' . last_file_name
+  endif
 endfunction
 
-command! -nargs=1 -complete=dir Elast call EditLastFileFromDir(<f-args>)
+command! -nargs=+ -complete=dir Elast call EditLastFileFromDir(<f-args>)
 
 " Next mapping is adopted from destroyallsoftware.com screencasts
 " expand path of directory of current file typing %% in command mode
