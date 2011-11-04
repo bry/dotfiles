@@ -73,11 +73,13 @@ alias gsgpr="git stash; git pull --rebase; git stash pop;"
 alias gg="git log --all --grep"
 alias ga="git log --all --author"
 alias gbc="git branch -a --contains"
+alias gd="git diff"
 
 alias r='rails'
 alias ts='thin start'
 alias ss='script/server'
 alias sc='script/console'
+alias migrate='rake db:migrate'
 alias taildev="tail -n 500 -f log/development.log"
 
 alias rd='open -a Safari ~/x-files/dev/docs/rails/rdoc/index.html'
