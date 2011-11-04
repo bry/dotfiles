@@ -61,16 +61,14 @@ set wildmode=longest,list
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
 set wildignore+=vendor/**,public/assets/**,public/packages/**,log/*
 
-" Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
-au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
+" Capfile, lGemfile, Rakefile, Vagrantfile, Thorfile, Guardfile, config.ru and .opener files are ruby
+au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Vagrantfile,Thorfile,Guardfile,config.ru,.opener} set ft=ruby
 " json is javascript
 au BufNewFile,BufRead *.json set ft=javascript
 " make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
 au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
 " html.erb is eruby
 au BufNewFile,BufRead *.html.erb set filetype=html.eruby
-" .opener file is Ruby
-au BufNewFile,BufRead .opener set filetype=ruby
 " 78 width for text files
 au FileType text setlocal textwidth=78
 
