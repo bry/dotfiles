@@ -121,7 +121,7 @@ command! Py setf python
 command! Js setf javascript
 command! Rc e $MYVIMRC
 command! Profile e ~/.profile
-command! Ctags !ctags -R *
+command! Ctags !ctags --exclude=*.{sql,js,log} --exclude=public -R *
 command! RemoveTrailingSpaces %s/\s\+$//e
 
 " CommandT
