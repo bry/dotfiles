@@ -90,7 +90,8 @@ if has("gui_running")
   " highlighting of cursor line
   set cursorline
 
-  colorscheme molokai
+  colorscheme solarized
+  set background=dark
 endif
 
 if has('gui_macvim')
