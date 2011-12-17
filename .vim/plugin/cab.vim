@@ -26,7 +26,9 @@ else
     echo "cab.vim: cab.applescript file should be placed in the same directory as the cab.vim file"
   endif
 
-  let g:cab_ack_cmd = "ack -Q"
+  if !exists('g:cab_ack_cmd')
+    let g:cab_ack_cmd = "ack -Q"
+  endif
 
   function! CabSearch(...) range
     let arg = a:0 > 0 ? a:1 : expand("<cword>")
