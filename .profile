@@ -53,7 +53,7 @@ export PS1="$_MOTTON_BLUE\u@\H $_DARK_GRAY\W $_BLUE\$(parse_git_branch)$_MOTTON_
 # aliases
 
 alias vim="mvim"
-alias tvim="/usr/sbin/vim"
+alias vi="/usr/sbin/vim"
 
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
