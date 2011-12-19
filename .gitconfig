@@ -1,0 +1,22 @@
+[user]
+	name = Vadim Rachko
+	email = vadimrachko@gmail.com
+[color]
+  ui = auto
+[alias]
+	co = checkout
+  head = !git l -1
+  l = log --graph --abbrev-commit --date=relative
+  la = !git l --all
+  b = branch
+  d = diff
+  dc = diff --cached
+  ba = branch -a
+  r = reset
+  stashi = stash -u
+[core]
+	quotepath = false
+[push]
+	default = matching
+[format]
+  pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
