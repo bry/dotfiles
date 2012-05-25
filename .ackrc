@@ -4,7 +4,7 @@
 --smart-case
 --follow
 
---ignore-dir=assets
+--ignore-dir=public/assets
 --ignore-dir=log
 --ignore-dir=packages
 --ignore-dir=vendor
