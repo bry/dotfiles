@@ -67,10 +67,14 @@ au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Vagrantfile,Thorfile,Guardfile,c
 au BufNewFile,BufRead *.json set ft=javascript
 " make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
 au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
+" c - http://www.kernel.org/doc/Documentation/CodingStyle
+au FileType c set softtabstop=8 tabstop=8 shiftwidth=8 textwidth=79
 " html.erb is eruby
 au BufNewFile,BufRead *.html.erb set filetype=html.eruby
 " 78 width for text files
 au FileType text setlocal textwidth=78
+
+au BufNewFile,BufRead *.conf set ft=config
 
 filetype plugin indent on
 
@@ -90,8 +94,11 @@ if has("gui_running")
   " highlighting of cursor line
   set cursorline
 
-  colorscheme solarized
-  set background=dark
+  " set t_Co=256
+  " let g:solarized_termcolors=256
+  " set background=light
+  " colorscheme solarized
+  colorscheme molokai
 endif
 
 if has('gui_macvim')
@@ -163,10 +170,10 @@ command! Small call s:smallWindow()
 fun! s:smallTopWindow()
   let bounds = system("osascript -e 'tell application \"Finder\" to get bounds of window of desktop'")
   let screenWidth = split(bounds, ', ')[2]
-  let centerX = screenWidth / 2
+  let centerX = screenWidth / 2 - 700
 
   call s:smallWindow()
-  exe 'winpos ' . centerX . ' 0'
+  exe 'winpos ' . centerX . ' 300'
 endf
 
 command! SmallTop call s:smallTopWindow()
