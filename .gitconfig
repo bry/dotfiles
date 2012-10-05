@@ -1,0 +1,19 @@
+[user]
+	name = Bryan B. Cabalo
+[core]
+	excludesfile = ~/.gitignore
+[gist]
+	private = true
+[github]
+	user = bry
+[color]
+	branch = auto
+	diff = auto
+	status = auto
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
+	df = diff
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
