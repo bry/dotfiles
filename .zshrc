@@ -34,7 +34,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/Users/bcabalo/.rvm/gems/ruby-1.9.3-p194/bin:/Users/bcabalo/.rvm/gems/ruby-1.9.3-p194@global/bin:/Users/bcabalo/.rvm/rubies/ruby-1.9.3-p194/bin:/Users/bcabalo/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/bcabalo/.rvm/bin:/Applications/eclipse/android-sdk-macosx/tools:/Applications/eclipse/android-sdk-macosx/platform-tools:/usr/local/mysql/bin
+export PATH=/Applications/Postgres.app/Contents/MacOS/bin:/Users/bcabalo/.rvm/gems/ruby-1.9.3-p194/bin:/Users/bcabalo/.rvm/gems/ruby-1.9.3-p194@global/bin:/Users/bcabalo/.rvm/rubies/ruby-1.9.3-p194/bin:/Users/bcabalo/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/bcabalo/.rvm/bin:/Applications/eclipse/android-sdk-macosx/tools:/Applications/eclipse/android-sdk-macosx/platform-tools:/usr/local/mysql/bin
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM f    unct    ion
 
