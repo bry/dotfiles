@@ -35,8 +35,8 @@ else
     let search_str = empty(arg) ? s:getVisual() : arg
 
     let search_str = substitute(search_str, "'", "'\\\\''", 'g')
-    let cwd = getcwd()
-    let cmd = "osascript " . s:applescript_file . " '" . g:cab_ack_cmd . "' " . cwd . " '" . search_str . "'"
+    let cmd = "echo \"cd '" . getcwd() . "'\n" . g:cab_ack_cmd . " '" . search_str . "'\" | pbcopy"
+
     call system(cmd)
   endfunction
 

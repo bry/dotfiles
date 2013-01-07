@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+
+cmds = <<CMDS.strip.split("\n")
+
+  open -a "Mail"
+  open "http://www.google.com"
+  open -a "Skype"
+  open -a "Evernote"
+
+CMDS
+
+ios = cmds.map { |c| IO.popen(c) }
+loop do
+  break if ios.empty?
+  read_array = IO.select(ios)[0]
+
+  read_array.each do |io|
+    if out = io.gets
+      puts out
+    else
+      ios.delete(io)
+    end
+  end
+end
+
+puts "Done"

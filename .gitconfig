@@ -16,6 +16,7 @@
   stashi = stash -u
 [core]
 	quotepath = false
+	excludesfile = /Users/vadimr/.gitignore
 [push]
 	default = matching
 [format]

@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+exit if ARGV.empty?
+
+cwd = Dir.pwd
+
+file, line = ARGV[0, 2]
+full_file_name = File.join(cwd, file)
+
+url = "file://#{full_file_name}"
+url << "&line=#{line}" if line
+
+`open 'mvim://open?url=#{url}'`
