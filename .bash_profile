@@ -1,8 +1,11 @@
 . ~/.profile
 . ~/.bashrc
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-export PATH="~/tools/depot_tools:$PATH"
+export PATH="$HOME/.vadimr-tools/scripts:$PATH"
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+export PATH="/usr/local/bin:$PATH" # Brew should be first.
+export PATH="/usr/local/heroku/bin:$PATH" # Heroku Toolbelt
+export PATH="/usr/local/share/npm/bin:$PATH" # npm
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
