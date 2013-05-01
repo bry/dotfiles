@@ -168,6 +168,7 @@ Bundle 'tomtom/tcomment_vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
 Bundle 'thinca/vim-quickrun'
+Bundle 'kchmck/vim-coffee-script'
 
 Bundle 'vadimr/bclose.vim'
 
