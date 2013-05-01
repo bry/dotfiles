@@ -175,9 +175,7 @@ filetype plugin indent on
 
 " } Vundle stuff.
 
-" set runtimepath^=~/.vim/bundle/ctrlp.vim
 " ctrlp
-
 let g:ctrlp_custom_ignore = 'vendor/bundle'
 let g:ctrlp_map = ''
 map <leader>t :CtrlP<CR>
