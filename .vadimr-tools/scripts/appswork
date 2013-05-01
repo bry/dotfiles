@@ -8,7 +8,6 @@ cmds = <<CMDS.strip.split("\n")
   open -a "Adium"
   open -a "Propane.app"
   open -a "Evernote"
-  open -a "ForkLift"
   open -a "Twitter"
 
 CMDS
@@ -28,4 +27,3 @@ loop do
 end
 
 puts "Done"
-
