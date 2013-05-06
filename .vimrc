@@ -40,14 +40,15 @@ syntax on
 
 " Undo
 if has("persistent_undo")
+  silent !mkdir ~/.vim/tmp/undo > /dev/null 2>&1
   set undodir=~/.vim/tmp/undo
   set undofile
 endif
 
-" Backup
-set backupdir=~/.vim/tmp/backup
-set directory=~/.vim/tmp/swap
-set backup
+" No Backup, No Swap
+set nobackup
+set noswapfile
+set nowb
 
 " Tab completion
 set wildmenu
