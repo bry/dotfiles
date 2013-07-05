@@ -117,6 +117,9 @@ command! Rc e $MYVIMRC
 command! Ctags !ctags --exclude=*.{sql,js,log} --exclude=public --exclude=vendor/bundle -R *
 command! RemoveTrailingSpaces %s/\s\+$//e
 
+" Enable :Man plugin.
+runtime ftplugin/man.vim
+
 " Custom functions
 
 " Remap the tab key to do autocompletion or indentation depending on the
