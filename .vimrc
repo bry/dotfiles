@@ -80,6 +80,8 @@ set ls=2 " always show last status
 
 if exists('+colorcolumn')
   set colorcolumn=80
+  " with grey color
+  highlight ColorColumn ctermbg=7
 else
   au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
