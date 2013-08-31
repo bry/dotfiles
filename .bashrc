@@ -1,14 +1,14 @@
-source "/usr/local/Cellar/git/1.8.1.1/etc/bash_completion.d/git-completion.bash"
-source "/usr/local/Cellar/git/1.8.1.1/etc/bash_completion.d/git-prompt.sh"
+source ~/.vadimr-tools/scripts/git-completion.bash
+source ~/.vadimr-tools/scripts/git-prompt.sh
+
+PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+
+TERM=screen-256color
 
 export EDITOR="vim -f"
 export VISUAL="vim -f"
 
 export LANG="en_US.UTF-8"
-
-PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
-
-TERM=screen-256color
 
 alias grep='grep --color=auto'
 
