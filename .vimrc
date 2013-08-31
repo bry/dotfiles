@@ -151,9 +151,33 @@ endfunction
 
 command! -nargs=+ -complete=dir Elast call EditLastFileFromDir(<f-args>)
 
-" Next mapping is adopted from destroyallsoftware.com screencasts
-" expand path of directory of current file typing %% in command mode
-cnoremap %% <C-R>=expand('%:h').'/'<cr>
+" Custom status line with list of buffers.
+" Highlights current buffer with brackets.
+"
+set statusline=%f%=\ %<%{SLineWithBuffers()}\ %l,%c\ %P
+
+function! SLineWithBuffers()
+  let cur = bufname("%")
+  let res = []
+  for b in range(1, bufnr('$'))
+    if buflisted(b)
+      let bn = bufname(b)
+      let tail = fnamemodify(bn, ":t")
+      if tail == ""
+        let tail = "x"
+      endif
+      let wrapped = bn == cur ? "[" . tail . "]" : " " . tail . " "
+      call add(res, wrapped)
+    endif
+  endfor
+
+  let l = len(res)
+  if l < 2
+    return ""
+  else
+    return "B(". l . ")" . join(res, "")
+  endif
+endfunction
 
 " Vundle stuff {
 
@@ -164,7 +188,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'mru.vim'
-Bundle 'minibufexpl.vim'
 
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-ragtag'
