@@ -1,5 +1,4 @@
-" Vadim Rachko's .vimrc file
-" http://twitter.com/VDMR  http://github.com/vadimr
+" Vadim Rachko's .vimrc file.
 
 set nocompatible " forget about vi
 
@@ -7,7 +6,7 @@ set encoding=utf-8
 
 if has('eval')
   let mapleader="," " Remap leader
-end
+endif
 
 set hidden
 set history=1000
@@ -57,11 +56,9 @@ set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems,vendor/bundle
 set wildignore+=public/assets,public/packages,log/*,tmp,bin,script,coverage
 
 au BufNewFile,BufRead *.conf set ft=config
-au BufRead,BufNewFile *.proto set ft=proto
 
-au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Vagrantfile,Thorfile,Guardfile,config.ru} set ft=ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
 au BufRead,BufNewFile *.html.erb set filetype=eruby
-
 au BufRead,BufNewFile *.json set ft=javascript
 au BufRead,BufNewFile *.less set ft=css
 
@@ -136,8 +133,13 @@ endfunction
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <s-tab> <c-n>
 
-" Command for opening last file from indicated directory
-" example: :Elast db/migrate
+" Command for opening last file from indicated directory.
+" :Elast {dir} {offset}
+" offset is optional, default is 0 (opens last file).
+" Examples:
+" :Elast db/migrate
+" :Elast db/migrate 3
+"
 function! EditLastFileFromDir(dir, ...)
   let all_files = glob(a:dir . "/*")
   let str_index = get(a:000, 0)
@@ -187,14 +189,14 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
+Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/nerdtree'
 Bundle 'mru.vim'
+Bundle 'tomtom/tcomment_vim'
 
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-surround'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'kien/ctrlp.vim'
 Bundle 'thinca/vim-quickrun'
 Bundle 'kchmck/vim-coffee-script'
 
@@ -208,9 +210,6 @@ filetype plugin indent on
 let g:ctrlp_custom_ignore = 'vendor/bundle'
 let g:ctrlp_map = ''
 map <leader>t :CtrlP<CR>
-
-" minibuf
-let g:miniBufExplSplitBelow=0
 
 " NERDTree
 map <Leader>n :NERDTreeFind<CR>
