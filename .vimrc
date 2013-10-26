@@ -2,8 +2,6 @@
 
 set nocompatible " forget about vi
 
-set encoding=utf-8
-
 if has('eval')
   let mapleader="," " Remap leader
 endif
@@ -18,10 +16,9 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
-set list listchars=tab:\ \ ,trail:·
 set autoindent
 
-set wrap
+set nowrap
 
 " Search
 set hlsearch
@@ -85,30 +82,17 @@ endif
 
 if has("gui_running")
   set guicursor=a:block
-  set guioptions=egmrt " remove menu...
-  set guioptions-=r " remove scrollbars
+  set guioptions=egmt " no menu, no scrollbars
   set lsp=1 " line padding
-  set cursorline " highlighting of cursor line
-
   set guifont=Monaco:h12
 endif
-
-set langmap=йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ъ],фa,ыs,вd,аf,пg,рh,оj,лk,дl,ж\\;,э',яz,чx,сc,мv,иb,тn,ьm,б\\,,ю.,ё`,ЙQ,ЦW,УE,КR,ЕT,НY,ГU,ШI,ЩO,ЗP,Х{,Ъ},ФA,ЫS,ВD,АF,ПG,РH,ОJ,ЛK,ДL,Ж:,Э\\",ЯZ,ЧX,СC,МV,ИB,ТN,ЬM,Б<,Ю>,Ё~
 
 " Clear 'search' on enter.
 nnoremap <silent> <CR> :noh<cr>
 
-" Match brackets by tab
-nnoremap <tab> %
-vnoremap <tab> %
-
 " Change buffers
 map <C-h> :bp<CR>
 map <C-l> :bn<CR>
-
-" Jumps by 5 lines
-map <C-j> 5j
-map <C-k> 5k
 
 " Custom commands
 command! Rc e $MYVIMRC
@@ -117,41 +101,6 @@ command! RemoveTrailingSpaces %s/\s\+$//e
 
 " Enable :Man plugin.
 runtime ftplugin/man.vim
-
-" Custom functions
-
-" Remap the tab key to do autocompletion or indentation depending on the
-" context (from http://www.vim.org/tips/tip.php?tip_id=102)
-function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
-endfunction
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-inoremap <s-tab> <c-n>
-
-" Command for opening last file from indicated directory.
-" :Elast {dir} {offset}
-" offset is optional, default is 0 (opens last file).
-" Examples:
-" :Elast db/migrate
-" :Elast db/migrate 3
-"
-function! EditLastFileFromDir(dir, ...)
-  let all_files = glob(a:dir . "/*")
-  let str_index = get(a:000, 0)
-  let index = -1 - str2nr(str_index)
-
-  if len(all_files) > 0
-    let last_file_name = split(all_files)[index]
-    exe 'e ' . last_file_name
-  endif
-endfunction
-
-command! -nargs=+ -complete=dir Elast call EditLastFileFromDir(<f-args>)
 
 " Custom status line with list of buffers.
 " Highlights current buffer with brackets.
@@ -190,7 +139,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/nerdtree'
 Bundle 'mru.vim'
 Bundle 'tomtom/tcomment_vim'
 
@@ -210,10 +158,6 @@ filetype plugin indent on
 let g:ctrlp_custom_ignore = 'vendor/bundle'
 let g:ctrlp_map = ''
 map <leader>t :CtrlP<CR>
-
-" NERDTree
-map <Leader>n :NERDTreeFind<CR>
-let NERDTreeHighlightCursorline=0
 
 " Quick run
 map <Leader>r :QuickRun<CR>
