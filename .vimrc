@@ -9,7 +9,6 @@ endif
 set hidden
 set history=1000
 set scrolloff=3
-set backspace=indent,eol,start
 
 " Default whitespace stuff
 set tabstop=4
