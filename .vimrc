@@ -52,8 +52,8 @@ set nowb
 " Tab completion
 set wildmenu
 set wildmode=longest,list
-set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems,vendor/bundle
-set wildignore+=public/assets,public/packages,log/*,tmp,bin,script,coverage
+
+set wildignore+=*.o,*.so,.git,bin,coverage,log,tmp,vendor/gems,vendor/bundle,public/assets/,public/uploads/
 
 au BufNewFile,BufRead *.conf set ft=config
 
@@ -151,9 +151,9 @@ filetype plugin indent on
 " } Vundle stuff.
 
 " ctrlp
-let g:ctrlp_custom_ignore = 'vendor/bundle'
-let g:ctrlp_map = ''
-map <leader>t :CtrlP<CR>
+let g:ctrlp_map = '<leader>t'
+let g:ctrlp_working_path_mode = ''
+let g:ctrlp_custom_ignore = '\v(\.git|vendor/bundle|public/uploads)'
 
 " Quick run
 map <Leader>r :QuickRun<CR>
