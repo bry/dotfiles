@@ -24,7 +24,7 @@ set textwidth=79
 set nowrap
 
 " Search
-set hlsearch
+set nohlsearch
 set incsearch
 set ignorecase
 set smartcase
