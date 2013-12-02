@@ -10,6 +10,8 @@ set hidden
 set history=1000
 set scrolloff=3
 
+set list listchars=tab:\ \ ,trail:·
+
 " Default whitespace stuff
 set tabstop=4
 set shiftwidth=4
@@ -18,6 +20,7 @@ set noexpandtab
 set autoindent
 
 set textwidth=79
+
 set nowrap
 
 " Search
