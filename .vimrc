@@ -12,12 +12,13 @@ set scrolloff=3
 set backspace=indent,eol,start
 
 " Default whitespace stuff
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set noexpandtab
 set autoindent
 
+set textwidth=79
 set nowrap
 
 " Search
@@ -59,14 +60,7 @@ au BufRead,BufNewFile *.html.erb set filetype=eruby
 au BufRead,BufNewFile *.json set ft=javascript
 au BufRead,BufNewFile *.less set ft=css
 
-" PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
-au FileType python set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79
-
-au FileType c set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79
-au FileType cpp set tabstop=4 shiftwidth=4 softtabstop=4 textwidth=79
-
-" 78 width for text files
-au FileType text setlocal textwidth=78
+au FileType ruby,haml,eruby,yaml,html,javascript,coffee,sass set shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 
 filetype plugin indent on
 
