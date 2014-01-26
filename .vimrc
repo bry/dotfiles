@@ -143,6 +143,7 @@ Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-surround'
 Bundle 'thinca/vim-quickrun'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'jnwhiteh/vim-golang'
 
 Bundle 'vadimr/bclose.vim'
 
