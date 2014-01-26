@@ -1,15 +1,28 @@
-[user]
-	name = Vadim Rachko
-	email = vadimrachko@gmail.com
+[alias]
+  br = branch
+  ci = commit
+	co = checkout
+  df = diff
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	st = status
 [color]
   ui = auto
-[alias]
-  c = commit
-	co = checkout
+  branch = auto
+  diff = auto
+  status = auto
 [core]
 	quotepath = false
-	excludesfile = /Users/vadimr/.gitignore
-[push]
-	default = matching
+	excludesfile = ~/.gitignore
+[credential]
+	helper = osxkeychain
 [format]
   pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
+[github]
+	user = bry
+[gist]
+  private = true
+[push]
+	default = matching
+[user]
+	name = Bryan B. Cabalo
+	email = bcabalo@gmail.com

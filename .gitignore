@@ -1,3 +1,14 @@
+# Logs and databases #
+######################
+*.log
+
+# OS generated files #
+######################
 .DS_Store
-/tags
+*.swp
+
+# Other #
+#########
+*~
 .rbenv-vars
+/tags
