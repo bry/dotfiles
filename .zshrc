@@ -38,8 +38,6 @@ export PATH=/usr/local/go/bin:/usr/local/heroku:/usr/local/heroku/bin:/Applicati
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
-rvm use default
-
 export EDITOR="vim -f"
 export VISUAL="vim -f"
 export LANG="en_US.UTF-8"
