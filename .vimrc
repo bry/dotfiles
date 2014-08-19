@@ -35,7 +35,7 @@ set number
 
 set vb " visualvbell instead of beeping
 
-syntax off
+syntax on
 
 " Undo
 if has("persistent_undo")
