@@ -38,7 +38,8 @@ promptinit
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$PATH:/opt/X11/bin:/usr/local/mysql/bin:/usr/local/opt/rabbitmq/sbin/:/Users/bcabalo/Projects/gocode/bin:/usr/local/go/bin:/usr/local/heroku:/usr/local/heroku/bin:/Applications/Postgres.app/Contents/MacOS/bin:/bin:/Applications/adt-bundle-mac-x86_64-20131030/sdk/tools
+export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH:/opt/X11/bin:/usr/local/mysql/bin:/usr/local/opt/rabbitmq/sbin/:/Users/bcabalo/Projects/gocode/bin:/usr/local/go/bin:/usr/local/heroku:/usr/local/heroku/bin:/Applications/Postgres.app/Contents/MacOS/bin:/bin:/Applications/adt-bundle-mac-x86_64-20131030/sdk/tools"
+eval "$(rbenv init -)"
 
 export GOPATH=$HOME/Projects/gocode
 
@@ -48,7 +49,8 @@ export LANG="en_US.UTF-8"
 
 # Aliases
 alias grep='grep --color=auto'
-alias p='cd /Users/bcabalo/Projects'
+alias p="cd $HOME/Projects"
+alias github="cd $HOME/Projects/github"
 
 alias g='git status'
 alias gpr='git pull --rebase'
