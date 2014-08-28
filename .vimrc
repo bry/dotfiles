@@ -138,6 +138,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'mru.vim'
 Bundle 'tomtom/tcomment_vim'
 
+Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-surround'
