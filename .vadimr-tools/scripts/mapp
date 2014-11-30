@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+if [ ! -x $1 ]
+then
+  echo "First arg should be executable"
+  exit 1
+fi
+
+if mkdir -p "$1.app/Contents/Resources" && mkdir -p "$1.app/Contents/MacOS" && cp $1 "$1.app/Contents/MacOS/$1"
+then
+  echo "Ok"
+else
+  echo "Something wrong."
+fi

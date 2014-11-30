@@ -7,10 +7,6 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -31,11 +27,29 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
 
+# Prompt
+autoload -U promptinit
+promptinit
+
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/Applications/Postgres.app/Contents/MacOS/bin:/Users/bcabalo/.rvm/gems/ruby-2.0.0-p0/bin:/Users/bcabalo/.rvm/gems/ruby-2.0.0-p0@global/bin:/Users/bcabalo/.rvm/rubies/ruby-2.0.0-p0/bin:/Users/bcabalo/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/bcabalo/.rvm/bin:/Applications/eclipse/android-sdk-macosx/tools:/Applications/eclipse/android-sdk-macosx/platform-tools:/usr/local/mysql/bin
+export PATH="/usr/local/sbin:$PATH:/opt/X11/bin:/usr/local/mysql/bin:/usr/local/opt/rabbitmq/sbin/:/Users/bcabalo/Projects/gocode/bin:/usr/local/go/bin:/usr/local/heroku:/usr/local/heroku/bin:/Applications/Postgres.app/Contents/Versions/9.3/bin:/bin:/Applications/adt-bundle-mac-x86_64-20131030/sdk/tools:$HOME/.rvm/bin"
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+export GOPATH=$HOME/Projects/gocode
+export EDITOR="vim -f"
+export VISUAL="vim -f"
+export LANG="en_US.UTF-8"
 
-rvm use default   
+# Aliases
+alias grep='grep --color=auto'
+alias projects="cd $HOME/Projects"
+
+alias g='git status'
+alias gpr='git pull --rebase'
+alias gsgpr='git stash; git pull --rebase; git stash pop;'
+
+alias ag='ag --ignore-dir=log/development.log'
+
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"

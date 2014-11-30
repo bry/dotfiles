@@ -1,19 +1,28 @@
-[user]
-	name = Bryan B. Cabalo
+[alias]
+  br = branch
+  ci = commit
+	co = checkout
+  df = diff
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	st = status
+[color]
+  ui = auto
+  branch = auto
+  diff = auto
+  status = auto
 [core]
+	quotepath = false
 	excludesfile = ~/.gitignore
-[gist]
-	private = true
+[credential]
+	helper = osxkeychain
+[format]
+  pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
 [github]
 	user = bry
-[color]
-	branch = auto
-	diff = auto
-	status = auto
-[alias]
-	st = status
-	ci = commit
-	co = checkout
-	br = branch
-	df = diff
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+[gist]
+  private = true
+[push]
+	default = matching
+[user]
+	name = Bryan B. Cabalo
+	email = bcabalo@gmail.com
