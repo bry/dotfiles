@@ -8,6 +8,6 @@ Copy [@bry](https://github.com/bry)'s local VIM dev env config
 2. Run
 ```bash
 git clone https://github.com/bry/vundle.git ~/.vim/bundle/vundle &&
-curl https://raw.github.com/bry/dotfiles/master/.vimrc > ~/.vimrc &&
+curl https://raw.githubusercontent.com/bry/dotfiles/master/.vimrc > ~/.vimrc &&
 vim -c "BundleInstall"
 ```
