@@ -147,6 +147,8 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'jnwhiteh/vim-golang'
 
 Bundle 'vadimr/bclose.vim'
+Bundle 'leafoftree/vim-vue-plugin'
+
 
 filetype plugin indent on
 
