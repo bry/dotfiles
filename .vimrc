@@ -9,6 +9,7 @@ endif
 set hidden
 set history=1000
 set scrolloff=3
+set t_vb=
 
 set list listchars=tab:\ \ ,trail:·
 
