@@ -1,0 +1,7 @@
+{
+    "window.commandCenter": true,
+    "terminal.integrated.tabs.title": "${sequence}",
+    "terminal.integrated.allowChords": false,
+    "terminal.integrated.sendKeybindingsToShell": true,
+    "window.autoDetectColorScheme": false
+}
