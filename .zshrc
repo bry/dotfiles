@@ -53,3 +53,5 @@ alias ag='ag --ignore-dir=log/development.log'
 
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
+
+alias dev='bin/dev'
