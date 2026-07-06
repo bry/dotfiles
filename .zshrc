@@ -56,3 +56,4 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 
 alias dev='bin/dev'
 alias r='rails'
+alias rt='rails test'
